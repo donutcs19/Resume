@@ -1,0 +1,31 @@
+.wrapper {
+    display: grid;
+    place-items: center;
+  }
+  
+  .typing-demo {
+    width: 22ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 1em;
+    
+    opacity: 0; /* ซ่อนก่อน */
+    animation:
+      show 0s linear 1s forwards, /* ปรากฏหลัง 3s */
+      typing 7s steps(22) 1s forwards,
+      blink 0.7s step-end infinite 1s;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  @keyframes show {
+    to { opacity: 1; }
+  }
