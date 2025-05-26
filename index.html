@@ -626,6 +626,13 @@
       <p>&copy; 2025 Thitinat Chimyen. All rights reserved.</p>
     </footer>
 
+    <button
+      id="toTopButton"
+      class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition hidden"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
       function toggleDark() {
         const root = document.documentElement;
@@ -660,6 +667,44 @@
         const menu = document.getElementById("mobile-menu");
         menu.classList.toggle("hidden");
       }
+    </script>
+
+     <!-- Toggle Script -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        Thumbs: false,
+        Toolbar: true,
+      });
+    </script>
+    <script>
+      // แสดง/ซ่อนปุ่มเมื่อเลื่อนหน้า
+      const toTopButton = document.getElementById("toTopButton");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          toTopButton.classList.remove("hidden");
+        } else {
+          toTopButton.classList.add("hidden");
+        }
+      });
+
+      // คลิกปุ่มเพื่อเลื่อนขึ้นด้านบน
+      toTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
     </script>
   </body>
 </html>
