@@ -56,49 +56,116 @@
   >
     <!-- Navbar -->
     <nav
-      class="flex justify-between items-center px-8 py-4 shadow-lg bg-white/70 dark:bg-gray-900/70 backdrop-blur-md sticky top-0 z-50 transition-all duration-300"
+      class="bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-lg sticky top-0 z-50 transition-all duration-300"
     >
-      <h1
-        class="text-2xl font-bold text-blue-600 dark:text-blue-400 tracking-wide"
-      ></h1>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <h1
+            class="text-2xl font-bold text-blue-600 dark:text-blue-400 tracking-wide"
+          >
+            Thitinat
+          </h1>
 
-      <div
-        class="flex items-center space-x-6 text-sm font-medium text-gray-800 dark:text-gray-300"
-      >
-        <a
-          href="#"
-          class="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >Home</a
-        >
-        <a
-          href="#about"
-          class="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >About</a
-        >
-        <a
-          href="#experience"
-          class="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >Experience</a
-        >
-        <a
-          href="#training"
-          class="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >Training & Certifications</a
-        >
-        <a
-          href="#contact"
-          class="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >Contact</a
-        >
+          <!-- Mobile controls: Hamburger + Theme toggle -->
+          <div class="md:hidden flex items-center space-x-4">
+            <button
+              onclick="toggleDark()"
+              id="theme-toggle"
+              class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 dark:border-gray-600 hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition"
+            >
+              <i class="fas fa-moon hidden dark:inline text-blue-500"></i>
+              <i class="fas fa-sun inline dark:hidden text-yellow-400"></i>
+            </button>
+            <button
+              onclick="toggleMenu()"
+              class="text-gray-800 dark:text-gray-300 focus:outline-none"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
 
-        <button
-          onclick="toggleDark()"
-          id="theme-toggle"
-          class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 dark:border-gray-600 hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition"
+          <!-- Desktop Menu -->
+          <div
+            id="menu"
+            class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-800 dark:text-gray-300"
+          >
+            <a
+              href="#"
+              class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >About</a
+            >
+            <a
+              href="#experience"
+              class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Experience</a
+            >
+            <a
+              href="#training"
+              class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Training & Certifications</a
+            >
+            <a
+              href="./portfolio.html"
+              class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Portfolio</a
+            >
+            <a
+              href="#contact"
+              class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Contact</a
+            >
+            <button
+              onclick="toggleDark()"
+              id="theme-toggle-desktop"
+              class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 dark:border-gray-600 hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition"
+            >
+              <i class="fas fa-moon hidden dark:inline text-blue-500"></i>
+              <i class="fas fa-sun inline dark:hidden text-yellow-400"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="md:hidden hidden flex flex-col space-y-3 py-4 px-4 bg-white dark:bg-gray-900 rounded-lg shadow-md border dark:border-gray-700"
         >
-          <i class="fas fa-moon hidden dark:inline text-blue-500"></i>
-          <i class="fas fa-sun inline dark:hidden text-yellow-400"></i>
-        </button>
+          <a
+            href="#"
+            class="block text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="block text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Experience</a
+          >
+          <a
+            href="#training"
+            class="block text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Training & Certifications</a
+          >
+          <a
+            href="./portfolio.html"
+            class="block text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Portfolio</a
+          >
+          <a
+            href="#contact"
+            class="block text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Contact</a
+          >
+        </div>
       </div>
     </nav>
 
@@ -111,7 +178,7 @@
         alt="Profile"
         class="w-80 h-80 rounded-full mx-auto shadow-lg mb-6 animate-fadeInUp mt-4"
       />
-      <h2 class="text-5xl font-bold mb-4">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center">
         <div class="wrapper">
           <div class="typing-demo">
             <span class="text-blue-600 dark:text-blue-400 animate-fadeInUp mt-4"
@@ -127,12 +194,14 @@
       <a
         href="./file/ResumeTH-Thitinat_cy.pdf"
         class="inline-block px-5 py-2 mt-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-lg animate-fadeInUp mt-4"
-        target="_blank">ResumeTH</a
+        target="_blank"
+        >ResumeTH</a
       >
       <a
         href="./file/ResumeEN-Thitinat_cy.pdf"
         class="inline-block px-5 py-2 mt-4 bg-green-600 text-white rounded hover:bg-green-700 transition text-lg animate-fadeInUp mt-10"
-        target="_blank">ResumeEN</a
+        target="_blank"
+        >ResumeEN</a
       >
     </section>
 
@@ -207,17 +276,13 @@
         </h3>
 
         <div class="space-y-16">
-         
-
           <!-- Job 1 -->
           <div
             class="relative bg-white dark:bg-gray-800 border-l-4 border-blue-500 rounded-xl shadow-lg px-8 py-6 transition hover:shadow-2xl max-w-4xl mx-auto"
           >
             <div class="flex justify-between items-center mb-4">
               <div class="flex items-center gap-4">
-                <div
-                  class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full"
-                >
+                <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
                   <i
                     class="fas fa-network-wired text-blue-600 dark:text-blue-300 text-xl"
                   ></i>
@@ -313,19 +378,21 @@
                 <i class="fas fa-check-circle mr-2"></i> Introduction to Career
                 Skills in Software Development
               </a>
-               <a
+              <a
                 href="https://www.linkedin.com/learning/certificates/aadfac5c5b72b6150687cdab85c5549dc67a6aaf16367d2f602af5d5622bab0a?trk=share_certificate"
                 target="_blank"
                 class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
               >
-                <i class="fas fa-check-circle mr-2"></i> Programming Foundations: Beyond the Fundamentals
+                <i class="fas fa-check-circle mr-2"></i> Programming
+                Foundations: Beyond the Fundamentals
               </a>
-               <a
+              <a
                 href="https://www.linkedin.com/learning/certificates/eb930bc404082c0e637aa9928e985b2482bc280c5c0d212822d659353105c1ec?trk=share_certificate"
                 target="_blank"
                 class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
               >
-                <i class="fas fa-check-circle mr-2"></i> Career Essentials in Software Development by Microsoft and LinkedIn
+                <i class="fas fa-check-circle mr-2"></i> Career Essentials in
+                Software Development by Microsoft and LinkedIn
               </a>
             </div>
           </div>
@@ -407,13 +474,15 @@
                 href="https://samsungsic-thailand.org/certificate-tutor?cert_hash=48bd2641d1074eb8"
                 class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-yellow-500 rounded-full hover:bg-yellow-600 transition"
               >
-                <i class="fas fa-check-circle mr-2"></i> Introduction to Programming with Python
+                <i class="fas fa-check-circle mr-2"></i> Introduction to
+                Programming with Python
               </a>
               <a
                 href="https://samsungsic-thailand.org/certificate-tutor?cert_hash=02c33ed00631b4d2"
                 class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-yellow-500 rounded-full hover:bg-yellow-600 transition"
               >
-                <i class="fas fa-check-circle mr-2"></i> Introduction to Artificial Intelligence in the Workplace
+                <i class="fas fa-check-circle mr-2"></i> Introduction to
+                Artificial Intelligence in the Workplace
               </a>
             </div>
           </div>
@@ -498,21 +567,21 @@
                 Advanced LAN Cabling 2024
               </a>
               <a
-              href="./file/NETWORK_CABLING_for_Engineering.pdf"
-              target="_blank"
-              class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-full hover:bg-green-700 transition"
-            >
-              <i class="fas fa-check-circle mr-2"></i> Link Certificate
-              NETWORK CABLING for Engineering
-            </a>
-            <a
-              href="./file/CCTV&SMART_CITY_Cabling_Solutions.pdf"
-              target="_blank"
-              class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-full hover:bg-green-700 transition"
-            >
-              <i class="fas fa-check-circle mr-2"></i> Link Certificate
-              CCTV&SMART CITY Cabling Solutions
-            </a>
+                href="./file/NETWORK_CABLING_for_Engineering.pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-full hover:bg-green-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i> Link Certificate
+                NETWORK CABLING for Engineering
+              </a>
+              <a
+                href="./file/CCTV&SMART_CITY_Cabling_Solutions.pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-full hover:bg-green-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i> Link Certificate
+                CCTV&SMART CITY Cabling Solutions
+              </a>
             </div>
           </div>
         </div>
@@ -534,13 +603,17 @@
           ><a
             href="https://www.linkedin.com/in/thitinat-chimyen-b9a6b3142/"
             class="hover:underline"
-            target="_blank">Thitinat Chimyen</a
+            target="_blank"
+            >Thitinat Chimyen</a
           >
         </p>
         <p>
           <i class="fab fa-github mr-2 text-blue-600 dark:text-blue-400"></i
-          ><a href="https://github.com/donutcs19" class="hover:underline"
-          target="_blank">github.com/donutcs19</a
+          ><a
+            href="https://github.com/donutcs19"
+            class="hover:underline"
+            target="_blank"
+            >github.com/donutcs19</a
           >
         </p>
       </div>
@@ -581,6 +654,12 @@
         document.documentElement.classList.add("dark");
       }
       updateThemeIcon();
+    </script>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
     </script>
   </body>
 </html>

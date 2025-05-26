@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300 scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thitinat.cy | portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              typing: {
+                from: { width: "0" },
+                to: { width: "0%" },
+              },
+              blink: {
+                "50%": { borderColor: "transparent" },
+              },
+            },
+            animation: {
+              fadeInUp: "fadeInUp 1s ease-out",
+              typing: "typing 3s steps(30, end) forwards",
+              blink: "blink 1s step-end infinite",
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link
+      rel="shortcut icon"
+      href="./favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css"
+    />
+  </head>
+  <body
+    class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white font-sans"
+  >
+    <!-- Navbar -->
+    <nav
+      class="bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-lg sticky top-0 z-50 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <!-- Logo / Title -->
+          <div
+            class="flex-shrink-0 text-2xl font-bold text-blue-600 dark:text-blue-400 tracking-wide"
+          >
+            Thitinat
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="flex items-center md:hidden space-x-3">
+            <button
+              onclick="toggleDark()"
+              id="theme-toggle"
+              class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 dark:border-gray-600 hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition"
+            >
+              <i class="fas fa-moon hidden dark:inline text-blue-500"></i>
+              <i class="fas fa-sun inline dark:hidden text-yellow-400"></i>
+            </button>
+            <button
+              id="menu-toggle"
+              class="text-gray-800 dark:text-gray-300 focus:outline-none"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div
+            class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-800 dark:text-gray-300"
+          >
+            <a
+              href="index.html"
+              class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Resume</a
+            >
+            <a
+              href="#portfolio"
+              class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Portfolio</a
+            >
+            <a
+              href="#contact"
+              class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Contact</a
+            >
+
+            <button
+              onclick="toggleDark()"
+              id="theme-toggle-desktop"
+              class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 dark:border-gray-600 hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition"
+            >
+              <i class="fas fa-moon hidden dark:inline text-blue-500"></i>
+              <i class="fas fa-sun inline dark:hidden text-yellow-400"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Links -->
+      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+        <a
+          href="index.html"
+          class="block py-2 text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+          >Home</a
+        >
+        <a
+          href="#"
+          class="block py-2 text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+          >Resume</a
+        >
+        <a
+          href="#portfolio"
+          class="block py-2 text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+          >Portfolio</a
+        >
+        <a
+          href="#contact"
+          class="block py-2 text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      class="text-center py-20 bg-gradient-to-b from-blue-50 dark:from-gray-800 to-transparent"
+    >
+      <img
+        src="./img/profile.jpg"
+        alt="Profile"
+        class="w-80 h-80 rounded-full mx-auto shadow-lg mb-6 animate-fadeInUp mt-4"
+      />
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center">
+        <div class="wrapper">
+          <div class="typing-demo">
+            <span class="text-white-600 dark:text-white-400 animate-fadeInUp mt-4"
+              >My Portfolio;</span
+            >
+          </div>
+        </div>
+      </h2>
+
+      
+    </section>
+
+   
+
+    <!-- Portfolio Section -->
+    <section
+      id="portfolio"
+      class="bg-gray-50 dark:bg-gray-900 py-16 px-6 animate-fadeInUp"
+    >
+      <div class="max-w-5xl mx-auto">
+        
+
+        <div class="space-y-16">
+          <div
+            class="relative bg-white dark:bg-gray-800 border-l-4 border-blue-500 rounded-xl shadow-lg px-4 sm:px-6 md:px-8 py-6 transition hover:shadow-2xl max-w-4xl mx-auto"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4"
+            >
+              <div class="flex items-center gap-4">
+                <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
+                  <i
+                    class="fa-solid fa-tv text-blue-600 dark:text-blue-300 text-xl"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"
+                  >
+                    เว็บไซต์และระบบลงทะเบียนงานประชุมวิชาการด้านสถิติ NUCS 2018
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a
+                data-fancybox="gallery"
+                data-caption="nucs 2018 : การประชุมวิชาการระดับปริญญาตรี สาขาวิชาสถิติ ระดับชาติ"
+                href="./portfolio/img/stat_1.png"
+              >
+                <img
+                  src="./portfolio/img/stat_1.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="nucs 2018 : ลงทะเบียนเข้าร่วมงาน"
+                href="./portfolio/img/stat_2.png"
+              >
+                <img
+                  src="./portfolio/img/stat_2.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="nucs 2018 : กำหนดการ"
+                href="./portfolio/img/stat_3.png"
+              >
+                <img
+                  src="./portfolio/img/stat_3.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="nucs 2018 : ตรวจสอบรายชื่อผู้เข้าร่วมงานทั้งหมด"
+                href="./portfolio/img/stat_4.png"
+              >
+                <img
+                  src="./portfolio/img/stat_4.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="nucs 2018 : สำหรับอาจารย์จัดการผู้เข้าร่วมงานทั้งหมด"
+                href="./portfolio/img/stat_5.png"
+              >
+                <img
+                  src="./portfolio/img/stat_5.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="nucs 2018 : สำหรับอาจารย์อนุมัติรีวิวบทความ"
+                href="./portfolio/img/stat_6.png"
+              >
+                <img
+                  src="./portfolio/img/stat_6.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="relative bg-white dark:bg-gray-800 border-l-4 border-blue-500 rounded-xl shadow-lg px-4 sm:px-6 md:px-8 py-6 transition hover:shadow-2xl max-w-4xl mx-auto"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4"
+            >
+              <div class="flex items-center gap-4">
+                <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
+                  <i
+                    class="fa-solid fa-tv text-blue-600 dark:text-blue-300 text-xl"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"
+                  >
+                    ระบบเช็คชื่อบัณฑิตและบุคลากรด้วยการสแกนใบหน้า
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a
+                data-fancybox="gallery"
+                data-caption="Face Scan : ติดตั้งจุดสแกนใบหน้า"
+                href="./portfolio/img/จัดแถวบัณฑิต_1.jpg"
+              >
+                <img
+                  src="./portfolio/img/จัดแถวบัณฑิต_1.jpg"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Face Scan : จุดสแกนใบหน้า"
+                href="./portfolio/img/จัดแถวบัณฑิต_2.jpg"
+              >
+                <img
+                  src="./portfolio/img/จัดแถวบัณฑิต_2.jpg"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Face Scan : หน้าเว็บสำหรับแสดงผล (Server)"
+                href="./portfolio/img/จัดแถวบัณฑิต_3.png"
+              >
+                <img
+                  src="./portfolio/img/จัดแถวบัณฑิต_3.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Face Scan : หน้าเว็บสำหรับแสดงผล (Client)"
+                href="./portfolio/img/จัดแถวบัณฑิต_4.png"
+              >
+                <img
+                  src="./portfolio/img/จัดแถวบัณฑิต_4.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Face Scan : ผู้บริหาร (อธิการบดี) สแกนเช็คชื่อผ่านระบบ"
+                href="./portfolio/img/จัดแถวบัณฑิต_5.png"
+              >
+                <img
+                  src="./portfolio/img/จัดแถวบัณฑิต_5.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Face Scan : ผู้บริหาร (อธิการบดี) สแกนเช็คชื่อผ่านระบบ"
+                href="./portfolio/img/จัดแถวบัณฑิต_6.png"
+              >
+                <img
+                  src="./portfolio/img/จัดแถวบัณฑิต_6.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="relative bg-white dark:bg-gray-800 border-l-4 border-blue-500 rounded-xl shadow-lg px-4 sm:px-6 md:px-8 py-6 transition hover:shadow-2xl max-w-4xl mx-auto"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4"
+            >
+              <div class="flex items-center gap-4">
+                <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
+                  <i
+                    class="fa-solid fa-tv text-blue-600 dark:text-blue-300 text-xl"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"
+                  >
+                    ระบบกล้องวงจรปิดสำหรับการคุมสอบ(Monitor) สำนักงานกพ.,
+                    คุรุสภา, TCAS
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a
+                data-fancybox="gallery"
+                data-caption="CCTV : หน้าเว็บสำหรับ Monitor CCTV"
+                href="./portfolio/img/CCTV_1.png"
+              >
+                <img
+                  src="./portfolio/img/CCTV_1.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="CCTV : หน้าเว็บสำหรับ Monitor CCTV"
+                href="./portfolio/img/CCTV_2.png"
+              >
+                <img
+                  src="./portfolio/img/CCTV_2.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="CCTV : หน้าเว็บสำหรับ Monitor CCTV (old version)"
+                href="./portfolio/img/CCTV_3.png"
+              >
+                <img
+                  src="./portfolio/img/CCTV_3.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="CCTV : หน้าเว็บสำหรับ Login สำหรับจัดการกล้องวงจรปิด"
+                href="./portfolio/img/CCTV_4.png"
+              >
+                <img
+                  src="./portfolio/img/CCTV_4.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="CCTV : หน้าเว็บสำหรับจัดการกล้องวงจรปิด"
+                href="./portfolio/img/CCTV_5.png"
+              >
+                <img
+                  src="./portfolio/img/CCTV_5.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="CCTV : ใช้งานควบคู่กับระบบของสำนักงานกพ. (Monitor)"
+                href="./portfolio/img/CCTV_6.jpg"
+              >
+                <img
+                  src="./portfolio/img/CCTV_6.jpg"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="relative bg-white dark:bg-gray-800 border-l-4 border-blue-500 rounded-xl shadow-lg px-4 sm:px-6 md:px-8 py-6 transition hover:shadow-2xl max-w-4xl mx-auto"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4"
+            >
+              <div class="flex items-center gap-4">
+                <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
+                  <i
+                    class="fa-solid fa-tv text-blue-600 dark:text-blue-300 text-xl"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"
+                  >
+                    CCTV Alert, CCTV Detection, Train Model YOLO (Learning)
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a
+                data-fancybox="gallery"
+                data-caption="Image Processing : ตรวจจับบุคคลและรถจากรูปภาพ"
+                href="./portfolio/img/yolo_1.png"
+              >
+                <img
+                  src="./portfolio/img/yolo_1.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Image Processing : นับตรวจจับรถยนต์,รถบัส,รถบรรทุก จากวิดีโอหรือกล้องวงจรปิด"
+                href="./portfolio/img/yolo_2.png"
+              >
+                <img
+                  src="./portfolio/img/yolo_2.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Image Processing : นับรถยนต์,รถบัส,รถบรรทุก จากวิดีโอหรือกล้องวงจรปิดโดยมีการแยกเลน"
+                href="./portfolio/img/yolo_3.png"
+              >
+                <img
+                  src="./portfolio/img/yolo_3.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Image Processing : ตรวจจับบุคคลในพื้นที่ส่วนบุคคลที่กำหนด"
+                href="./portfolio/img/yolo_4.png"
+              >
+                <img
+                  src="./portfolio/img/yolo_4.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Image Processing : ตรวจจับบุคคลในพื้นที่ส่วนบุคคลที่กำหนดและทำการแจ้งเตือนผ่าน e-mail"
+                href="./portfolio/img/yolo_5.jpg"
+              >
+                <img
+                  src="./portfolio/img/yolo_5.jpg"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Image Processing : Train model เพิ่มเติมจาก 80 model ที่มีใน yolo11n.pt "
+                href="./portfolio/img/yolo_6.png"
+              >
+                <img
+                  src="./portfolio/img/yolo_6.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="relative bg-white dark:bg-gray-800 border-l-4 border-blue-500 rounded-xl shadow-lg px-4 sm:px-6 md:px-8 py-6 transition hover:shadow-2xl max-w-4xl mx-auto"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4"
+            >
+              <div class="flex items-center gap-4">
+                <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
+                  <i
+                    class="fa-solid fa-tv text-blue-600 dark:text-blue-300 text-xl"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"
+                  >
+                    เว็บไซต์สาขาวิชาคณิตศาสตร์ คณะวิทยาศาสตร์ มหาวิทยาลัยแม่โจ้
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a
+                data-fancybox="gallery"
+                data-caption="Math MJU : โครงสร้างการบริหารงานอาจารย์ผู้รับผิดชอบหลักสูตร"
+                href="./portfolio/img/math_1.png"
+              >
+                <img
+                  src="./portfolio/img/math_1.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Math MJU : ทำเนียบรุ่นนักศึกษา"
+                href="./portfolio/img/math_2.png"
+              >
+                <img
+                  src="./portfolio/img/math_2.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Math MJU : ทำเนียบรุ่นนักศึกษา"
+                href="./portfolio/img/math_3.png"
+              >
+                <img
+                  src="./portfolio/img/math_3.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Math MJU : โครงสร้างหลักสูตร"
+                href="./portfolio/img/math_4.png"
+              >
+                <img
+                  src="./portfolio/img/math_4.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Math MJU : ข้อมูลเกี่ยวกับหน่วยงาน"
+                href="./portfolio/img/math_5.png"
+              >
+                <img
+                  src="./portfolio/img/math_5.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="Math MJU : ที่อยู่ติดต่อ"
+                href="./portfolio/img/math_6.png"
+              >
+                <img
+                  src="./portfolio/img/math_6.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="relative bg-white dark:bg-gray-800 border-l-4 border-blue-500 rounded-xl shadow-lg px-4 sm:px-6 md:px-8 py-6 transition hover:shadow-2xl max-w-4xl mx-auto"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4"
+            >
+              <div class="flex items-center gap-4">
+                <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
+                  <i
+                    class="fa-solid fa-tv text-blue-600 dark:text-blue-300 text-xl"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"
+                  >
+                    ระบบแจ้งขอสิทธิ์การใช้งานระบบด้วยบัตร NFC
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a
+                data-fancybox="gallery"
+                data-caption="NFC : หน้าเว็บสำหรับ Login เข้าสู่ระบบ Super Admin/Admin"
+                href="./portfolio/img/NFC_1.png"
+              >
+                <img
+                  src="./portfolio/img/NFC_1.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="NFC : หน้าเว็บสำหรับอัปเดตสถานะการเพิ่มสิทธิ์"
+                href="./portfolio/img/NFC_2.png"
+              >
+                <img
+                  src="./portfolio/img/NFC_2.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="NFC : หน้าเว็บสำหรับกรอกข้อมูลขอสิทธิ์การใช้งานระบบ"
+                href="./portfolio/img/NFC_3.png"
+              >
+                <img
+                  src="./portfolio/img/NFC_3.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="NFC : หน้าเว็บสำหรับกรอกข้อมูลขอสิทธิ์การใช้งานระบบ"
+                href="./portfolio/img/NFC_4.png"
+              >
+                <img
+                  src="./portfolio/img/NFC_4.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="NFC : หน้าเว็บสำหรับ Admin ตรวจสอบสถานะ"
+                href="./portfolio/img/NFC_5.png"
+              >
+                <img
+                  src="./portfolio/img/NFC_5.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="NFC : แจ้งเตือนผ่าน LINE Notify หลัง Admin ทำการเพิ่มข้อมูล"
+                href="./portfolio/img/NFC_6.jpg"
+              >
+                <img
+                  src="./portfolio/img/NFC_6.jpg"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="relative bg-white dark:bg-gray-800 border-l-4 border-blue-500 rounded-xl shadow-lg px-4 sm:px-6 md:px-8 py-6 transition hover:shadow-2xl max-w-4xl mx-auto"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4"
+            >
+              <div class="flex items-center gap-4">
+                <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
+                  <i
+                    class="fa-solid fa-tv text-blue-600 dark:text-blue-300 text-xl"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"
+                  >
+                    Hack OS Access Point Wifi Change to Router Wifi (OpenWrt
+                    firmware)
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a
+                data-fancybox="gallery"
+                data-caption="OpenWrt : Hack OS Access Point Wifi Change to Router Wifi"
+                href="./portfolio/img/wrt_1.png"
+              >
+                <img
+                  src="./portfolio/img/wrt_1.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="OpenWrt : Hack OS Access Point Wifi Change to Router Wifi"
+                href="./portfolio/img/wrt_2.png"
+              >
+                <img
+                  src="./portfolio/img/wrt_2.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="OpenWrt : Hack OS Access Point Wifi Change to Router Wifi"
+                href="./portfolio/img/wrt_3.png"
+              >
+                <img
+                  src="./portfolio/img/wrt_3.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="OpenWrt : Hack OS Access Point Wifi Change to Router Wifi"
+                href="./portfolio/img/wrt_4.png"
+              >
+                <img
+                  src="./portfolio/img/wrt_4.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="OpenWrt : Hack OS Access Point Wifi Change to Router Wifi"
+                href="./portfolio/img/wrt_5.png"
+              >
+                <img
+                  src="./portfolio/img/wrt_5.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="OpenWrt : Hack OS Access Point Wifi Change to Router Wifi"
+                href="./portfolio/img/wrt_6.png"
+              >
+                <img
+                  src="./portfolio/img/wrt_6.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="relative bg-white dark:bg-gray-800 border-l-4 border-blue-500 rounded-xl shadow-lg px-4 sm:px-6 md:px-8 py-6 transition hover:shadow-2xl max-w-4xl mx-auto"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4"
+            >
+              <div class="flex items-center gap-4">
+                <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-full">
+                  <i
+                    class="fa-solid fa-tv text-blue-600 dark:text-blue-300 text-xl"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white"
+                  >
+                    ระบบค้นหาข้อมูลนักศึกษาสำหรับเข้าใช้งาน MJU Mobile
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a
+                data-fancybox="gallery"
+                data-caption="MJU Mobile : หน้าเว็บสำหรับค้นหาและแสดงผลข้อมูล"
+                href="./portfolio/img/search_1.png"
+              >
+                <img
+                  src="./portfolio/img/search_1.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="MJU Mobile : หน้าเว็บสำหรับค้นหาและแสดงผลข้อมูล"
+                href="./portfolio/img/search_2.png"
+              >
+                <img
+                  src="./portfolio/img/search_2.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="MJU Mobile : หน้าเว็บสำหรับค้นหาและแสดงผลข้อมูล"
+                href="./portfolio/img/search_3.png"
+              >
+                <img
+                  src="./portfolio/img/search_3.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="MJU Mobile : หน้าเว็บสำหรับค้นหาและแสดงผลข้อมูล"
+                href="./portfolio/img/search_4.png"
+              >
+                <img
+                  src="./portfolio/img/search_4.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="MJU Mobile : หน้าเว็บสำหรับค้นหาและแสดงผลข้อมูล"
+                href="./portfolio/img/search_5.png"
+              >
+                <img
+                  src="./portfolio/img/search_5.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+              <a
+                data-fancybox="gallery"
+                data-caption="MJU Mobile : หน้าเว็บสำหรับค้นหาและแสดงผลข้อมูล"
+                href="./portfolio/img/search_6.png"
+              >
+                <img
+                  src="./portfolio/img/search_6.png"
+                  class="rounded-xl w-full object-cover h-44 shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-6">
+          <!-- LinkedIn Learning -->
+          <div
+            class="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 border border-gray-200 dark:border-gray-700 transition hover:shadow-xl"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-sky-100 dark:bg-sky-900 text-sky-600 dark:text-sky-300 w-10 h-10 flex items-center justify-center rounded-full shadow-inner mr-3"
+              >
+                <i class="fab fa-linkedin text-lg"></i>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-800 dark:text-white">
+                คู่มือการใช้งานและวิธีแก้ไขปัญหาระบบต่างๆ
+              </h4>
+            </div>
+            <div class="space-y-2">
+              <a
+                href="./portfolio/file/ติดตั้งโปรแกรมสอบ กพ..pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i> ติดตั้งโปรแกรมสอบ กพ.
+              </a>
+              <a
+                href="./portfolio/file/วิธีฟิก IP address กรณีโปรแกรมสอบ กพ. มีปัญหา.pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i> วิธีฟิก IP address
+                กรณีโปรแกรมสอบ กพ. มีปัญหา
+              </a>
+              <a
+                href="./portfolio/file/คู่มือดึงภาพจาก Server CCTV.pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i> คู่มือดึงภาพจาก Server
+                CCTV
+              </a>
+              <a
+                href="./portfolio/file/วิธีเพิ่มสิทธิ์ Smart Gate MJU.pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i> วิธีเพิ่มสิทธิ์ Smart
+                Gate MJU
+              </a>
+              <a
+                href="./portfolio/file/คู่มือ_Kill_Power_Cut_Reset.pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i> คู่มือ Kill Power Cut
+                Reset Smart Gate
+              </a>
+              <a
+                href="./portfolio/file/คู่มือตั้งค่า_LINK-PA-3220.pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i> คู่มือตั้งค่า
+                LINK-PA-3220
+              </a>
+              <a
+                href="./portfolio/file/คู่มือการใช้งาน_Projector_Wireless.pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i> คู่มือการใช้งาน
+                Projector Wireless
+              </a>
+              <a
+                href="./portfolio/file/คู่มือการใช้งาน_Projector_Wireless_LIB.pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i>คู่มือการใช้งาน
+                Projector Wireless Library
+              </a>
+              <a
+                href="./portfolio/file/การสร้างห้องประชุมด้วย_Google_Meet.pdf"
+                target="_blank"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-sky-600 rounded-full hover:bg-sky-700 transition"
+              >
+                <i class="fas fa-check-circle mr-2"></i>การสร้างห้องประชุมด้วย
+                Google Meet
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-16 animate-fadeInUp">
+      <h3 class="text-3xl font-semibold mb-6">Contact</h3>
+      <div class="space-y-2 text-lg">
+        <p>
+          <i class="fas fa-envelope mr-2 text-blue-600 dark:text-blue-400"></i
+          ><a href="mailto:thitinat.cy@gmail.com" class="hover:underline"
+            >thitinat.cy@gmail.com</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-linkedin mr-2 text-blue-600 dark:text-blue-400"></i
+          ><a
+            href="https://www.linkedin.com/in/thitinat-chimyen-b9a6b3142/"
+            class="hover:underline"
+            target="_blank"
+            >Thitinat Chimyen</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-github mr-2 text-blue-600 dark:text-blue-400"></i
+          ><a
+            href="https://github.com/donutcs19"
+            class="hover:underline"
+            target="_blank"
+            >github.com/donutcs19</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="text-center py-6 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
+    >
+      <p>&copy; 2025 Thitinat Chimyen. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function toggleDark() {
+        const root = document.documentElement;
+        const isDark = root.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateThemeIcon();
+      }
+
+      function updateThemeIcon() {
+        document
+          .querySelector("#theme-toggle .fa-moon")
+          .classList.toggle(
+            "hidden",
+            !document.documentElement.classList.contains("dark")
+          );
+        document
+          .querySelector("#theme-toggle .fa-sun")
+          .classList.toggle(
+            "hidden",
+            document.documentElement.classList.contains("dark")
+          );
+      }
+
+      // Check theme on load
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+      updateThemeIcon();
+    </script>
+
+    <!-- Toggle Script -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        Thumbs: false,
+        Toolbar: true,
+      });
+    </script>
+  </body>
+</html>
